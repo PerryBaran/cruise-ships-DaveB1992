@@ -10,4 +10,24 @@ describe('port constructor', () => {
 
         expect(myPort.name).toBe('Amsterdam')
     })
+    it('can add a ship', () => {
+        const port = new Port ('Amsterdam')
+        const ship = {}
+
+        port.addShip(ship)
+
+        expect(port.ships).toContain(ship)
+    })
+    it('can remove a ship', () =>{
+        const port = new Port('Amsterdam')
+        const theBlackPearl = {}
+        const theFlyingDutchmen = {}
+
+        port.addShip(theBlackPearl)
+        port.addShip(theFlyingDutchmen)
+
+        port.removeShip(theBlackPearl)
+
+        expect(port.ships).toEqual([theBlackPearl])
+    })  
 })  

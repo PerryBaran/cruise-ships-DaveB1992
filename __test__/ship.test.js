@@ -44,7 +44,15 @@ describe('dock', () =>{
         ship.dock();
 
         expect(ship.currentPort).toBe(dover);
+        expect(amsterdam.ships).toContain(ship)
     });
+    it('gets added to the port', () => {
+        const amsterdam = new Port('Amsterdam')
+        const itinerary = new Itinerary([amsterdam])
+        const ship = new Ship(itinerary)
+
+        expect(amsterdam.ships).toContain(ship)
+    })
 });
 
 describe('can\'t sail anymore', () => {

@@ -11,9 +11,9 @@ describe('port constructor', () => {
         beforeEach(() => {
             myPort = new Port ('Amsterdam')
             port = new Port ('Amsterdam')
-            ship = {}
-            theBlackPearl = {}
-            theFlyingDutchmen = {}
+            ship = jest.fn()
+            theBlackPearl = jest.fn()
+            theFlyingDutchmen = jest.fn()
         })
         it('returns an object', () => {
             
@@ -26,7 +26,7 @@ describe('port constructor', () => {
         })
         it('can add a ship', () => {
             const port = new Port ('Amsterdam')
-            const ship = {}
+            const ship = jest.fn()
     
             port.addShip(ship)
     
@@ -34,8 +34,8 @@ describe('port constructor', () => {
         })
         it('can remove a ship', () =>{
             const port = new Port('Amsterdam')
-            const theBlackPearl = {}
-            const theFlyingDutchmen = {}
+            const theBlackPearl = jest.fn()
+            const theFlyingDutchmen = jest.fn()
     
             port.addShip(theBlackPearl)
             port.addShip(theFlyingDutchmen)

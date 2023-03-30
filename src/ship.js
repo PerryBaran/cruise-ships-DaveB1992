@@ -21,6 +21,7 @@ class Ship{
               throw new Error('Reached the end of the Itinerary!')
             }
           
+        this.currentPort.removeShip(this)
         this.previousPort = this.currentPort
         this.currentPort = null
         }

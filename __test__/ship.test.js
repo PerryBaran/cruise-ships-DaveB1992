@@ -24,7 +24,11 @@ describe('ship', () => {
             name: 'Dover',
             ships: []
         }
-        itinerary = new Itinerary([amsterdam, dover])
+
+        itinerary = {
+            ports: [amsterdam, dover]
+        }
+
         ship = new Ship(itinerary)
 
         })
@@ -43,7 +47,7 @@ describe('ship', () => {
             ship.setSail()
           
             expect(ship.currentPort).toBeFalsy()
-            expect(amsterdam.ships).not.toContain(ship)
+            expect(amsterdam.removeShip).toHaveBeenCalledWith(ship)
             
           })
           it('gets added to the port on instantiation ', () => {

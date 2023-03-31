@@ -4,11 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "format": "npx prettier --write ."
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "jest": "^29.5.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.7"
   }
 }
